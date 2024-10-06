@@ -48,11 +48,10 @@ export default class Library implements ILibrary {
 
   listAllBooks(): void {
     const lista = document.querySelector("#lista") as HTMLUListElement;
+    lista.innerHTML = "";
 
     if (this.books.length > 0) {
       // Render lista
-      lista.innerHTML = "";
-
       this.books.map((konyv) => {
         const li: HTMLLIElement = document.createElement("li");
         li.innerText = ` Cím: ${konyv._title}, Szerző: ${konyv._author}, Ára: ${konyv._price} HUF`;
