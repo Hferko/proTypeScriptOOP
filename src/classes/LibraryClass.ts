@@ -41,7 +41,8 @@ export default class Library implements ILibrary {
 
     if (wantedBook) {
       return wantedBook;
-    } else {
+    } 
+    else {
       return "Nem található ilyen könyv akönyvtárban";
     }
   }
@@ -57,7 +58,8 @@ export default class Library implements ILibrary {
         li.innerText = ` Cím: ${konyv._title}, Szerző: ${konyv._author}, Ára: ${konyv._price} HUF`;
         lista.appendChild(li);
       });
-    } else {
+    } 
+    else {
       lista.innerHTML = "A könyvtár üres";
     }
   }
@@ -66,7 +68,7 @@ export default class Library implements ILibrary {
     const select = document.querySelector("#borrowBook") as HTMLSelectElement;
 
     if (this.books.length > 0) {
-      // Render User
+      // Render otions
       select.innerHTML = "";
       const firstOpt: HTMLOptionElement = document.createElement("option");
       firstOpt.value = "";
@@ -79,7 +81,8 @@ export default class Library implements ILibrary {
         option.innerText = konyv._title;
         select.appendChild(option);
       });
-    } else {
+    } 
+    else {
       select.innerHTML = "A könyvtár üres";
     }
   }
