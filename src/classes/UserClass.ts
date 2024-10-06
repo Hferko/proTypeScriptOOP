@@ -9,11 +9,13 @@ export default class User {
   public readonly id: string;
   private _name: string;
   private _email: string;
+  public borrowedList: IBook[];
 
   constructor(name: string, email: string) {
     this.id = nanoid();
     this._name = name;
     this._email = email;
+    this.borrowedList = [];
   }
 
   // *** Get - Set ---->
@@ -28,7 +30,8 @@ export default class User {
       /^[A-zéáőúűöüóíÉÁŐÚŰÖÜÓÍ ,.'-]+$/.test(newName)
     ) {
       this._name = newName;
-    } else {
+    } 
+    else {
       console.error("Nem ér a neved...");
     }
   }
@@ -41,7 +44,8 @@ export default class User {
     let regex = new RegExp("[a-z0-9]+@[a-z]+.[a-z]{2,3}");
     if (newEmail && newEmail.length > 0 && regex.test(newEmail)) {
       this._email = newEmail;
-    } else {
+    } 
+    else {
       console.error("Helytelen email cím.");
     }
   }
@@ -51,19 +55,23 @@ export default class User {
     const library = new Library();
     let searchedBook: IBook | string = library.findBookById(bookId);
     console.log(searchedBook);
-
-    document.querySelector<HTMLUListElement>("#borrowed")!.innerHTML = "";
+    const borrowed = document.querySelector<HTMLUListElement>("#borrowed")!;
+    borrowed!.innerHTML = "";
 
     if (typeof searchedBook === "object") {
       library.removeBook(bookId);
+      this.borrowedList.push(searchedBook);
 
-      const li: HTMLLIElement = document.createElement("li");
-      li.innerText = ` Cím: ${searchedBook._title}, Szerző: ${searchedBook?._author}, Ára: ${searchedBook._price} HUF`;
-      document.querySelector<HTMLUListElement>("#borrowed")!.appendChild(li);
+      this.borrowedList.map((item) => {
+        const li: HTMLLIElement = document.createElement("li");
+        li.innerText = ` Cím: ${item._title}, Szerző: ${item._author}, Ára: ${item._price} HUF`;
+        borrowed!.appendChild(li);
+      });
+
       library.listAllBooks();
-    } else {
-      document.querySelector<HTMLUListElement>("#borrowed")!.innerHTML =
-        searchedBook;
+    } 
+    else {
+      borrowed!.innerHTML = searchedBook;
     }
   }
 
