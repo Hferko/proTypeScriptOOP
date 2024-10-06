@@ -42,7 +42,7 @@ export default class Library implements ILibrary {
     if (wantedBook) {
       return wantedBook;
     } else {
-      return "Nem található ilyen könyv";
+      return "Nem található ilyen könyv akönyvtárban";
     }
   }
 
