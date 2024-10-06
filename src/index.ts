@@ -9,6 +9,8 @@ import IBook from "./interfaces/IBook";
 let konyv1 = new Book('A helység kalapácsa', 'Petőfi Sándor', 1300);
 let konyv2 = new Book('Búcsú a fegyverektől', 'Ernest Hemingway', 2400);
 let konyv3 = new Book('Úri muri', 'Móricz Zsigmond', 2357);
+let konyv4 = new Book('A lét elviselhetetlen könnyűsége','Milan Kundera', 2868);
+let konyv5 = new Book('Háború és béke', 'Lev Tolsztoj', 3757);
 konyv1.printBookInfo();
 konyv2.printBookInfo();
 konyv3.printBookInfo();
@@ -18,6 +20,8 @@ let library = new Library();
 library.addBook(konyv1);
 library.addBook(konyv2);
 library.addBook(konyv3);
+library.addBook(konyv4);
+library.addBook(konyv5);
 
 // Egy User létrehozása--
 let ficko = new User("Glázser Bozsó", "www@qqq.yy");
