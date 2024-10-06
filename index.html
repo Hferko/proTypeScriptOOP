@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="hu">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/tsLogo.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Házi a 3. alkalomra</title>
+</head>
+
+<body>
+  <h1>Első OOP házi feladat</h1>
+  <div id="user"></div>
+  <main>
+    <h3>A könyvtárban lévő könyveinek listája:</h3>
+    <ul id="lista"></ul>
+    <h3>Kikölcsönzött könyvek:</h3>
+    <ul id="borrowed">Még nincss kikölcsönözve könyv</ul>
+
+    <form>
+      <div class="container">
+        <label for="borrowBook">Válaszd ki a könyvet, amit kölcsönöznél</label>
+        <select name="borrowBook" id="borrowBook"></select>
+      </div>
+      <div class="container" id="alert2"></div>
+    </form>
+
+    <hr>
+    <h3>Új könyv felvétele</h3>
+    <form id="bookForm">
+      <div class="container">
+        <label for="title"><b>A könyv címe</b></label>
+        <input type="text" placeholder="Cím" name="title" id="title" required>
+
+        <label for="author"><b>Szerző</b></label>
+        <input type="text" placeholder="Szerző" name="author" id="author" required>
+
+        <label for="price"><b>A könyv ára forintban</b></label>
+        <input type="number" placeholder="Ár Forintban" name="price" id="price" min="10">
+
+        <button id="registerbtn" class="registerbtn">Könyvtárba teszem</button>
+      </div>
+
+      <div class="container" id="alert"></div>
+    </form>
+    <hr>
+    <form id="userForm">
+      <div class="container">
+        <label for="username">Felhasználónév</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>       
+
+        <button type="submit" class="registerbtn">Bejelentkezem</button>
+      </div>
+
+      <div class="container" id="message"></div>
+    </form>
+  </main>
+
+  <script type="module" src="/src/index.ts"></script>
+</body>
+
+</html>

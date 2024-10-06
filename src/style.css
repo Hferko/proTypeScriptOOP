@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: linear-gradient(to bottom right, #e0b385, peru);
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+h1 {
+  margin-top: 1.5rem;
+}
+
+h3 {
+  color: lime;
+  text-align: left;
+  margin: 1rem;
+}
+
+main {
+  width: 86%;
+  margin: 10px auto;
+  padding: 1rem;
+  min-height: 100vh;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  border: 2px solid blue;
+  border-radius: 10px;
+  box-shadow: 4px 4px 8px navy, 0px 0px 16px navy;
+}
+
+#lista,
+#borrowed {
+  text-align: left;
+  margin-left: 10%;
+  list-style: inside;
+  list-style-type: "\1F44D";
+  line-height: 2rem;
+}
+
+#user {
+  position: fixed;
+  right: 0;
+  top: 0;
+  padding: 4px;
+  background-color: #555;
+  color: lime;
+}
+
+.container {
+  padding: 10px;
+  background-color: white;
+  width: 80%;
+  margin: 1rem auto;
+  border-radius: 10px;
+  color: navy;
+}
+
+input[type=text],
+input[type=password],
+input[type=number],
+input[type=email],
+select {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  font-size: 1rem;
+}
+
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=number]:focus,
+input[type=email]:focus,
+select:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  width: 50%;
+  margin: 1.5rem auto;
+
+}
+
+.registerbtn {
+  background-color: #04AA6D;
+  font-size: 1rem;
+  color: white;
+  padding: 10px 15px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+#alert,
+#alert2,
+#message {
+  background-color: #fff2f2;
+  text-align: center;
+  color: red;
+  display: none;
+  border: 1px solid red;
+}
