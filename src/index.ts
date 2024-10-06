@@ -15,6 +15,9 @@ konyv3.printBookInfo();
 
 // A könyvtár példányosítása, hogy hozzá tudjam adni a konyveket a listához
 let library = new Library();
+library.addBook(konyv1);
+library.addBook(konyv2);
+library.addBook(konyv3);
 
 // Egy User létrehozása--
 let ficko = new User("Glázser Bozsó", "www@qqq.yy");
